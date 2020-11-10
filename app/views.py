@@ -9,6 +9,12 @@ import json
 app1 = Blueprint('app', __name__, template_folder='templates', static_folder='static')
 
 
+@app1.route("/subdomain", subdomain="admin")
+def static_domain():
+
+    return "static domain"
+
+
 # 定义函数渲染网页
 @app1.route('/login/', endpoint='login')
 def show_login():
@@ -52,3 +58,7 @@ def account_login():
 def index():
     return render_template('scatter_plot.html')
 
+
+@app1.route('/country')
+
+    return render_template('trendmap.html')
